@@ -22,14 +22,16 @@ public class UserInterface {
         return character;
     }
 
-    public void printGameDefeat() {
+    public void printGameDefeat(String word) {
         //System.out.println("\\( ᴼ  ᴼ )/");
         System.out.println("Przegrales gre :(");
+        System.out.println("Poprawne haslo: " + word);
     }
 
-    public void printGameWin() {
+    public void printGameWin(String word) {
         //System.out.println("\\( ᴼ  ᴼ )/");
         System.out.println("Wygrales gre! :)");
+        System.out.println("Poprawne haslo: " + word);
     }
 
     public void printLetterPlaces(String word) {

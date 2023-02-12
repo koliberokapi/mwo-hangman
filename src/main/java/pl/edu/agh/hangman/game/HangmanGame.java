@@ -48,13 +48,12 @@ public class HangmanGame {
             userInterface.printLetterPlaces(word.getHiddenWord());
 
             if(word.isWordFullyGuessed()) {
-                userInterface.printGameWin();
+                userInterface.printGameWin(word.getWord());
                 this.startGame();
             }
         }
 
-        userInterface.printGameDefeat();
-        System.out.println("Poprawne hasło to: " + word.getWord());
+        userInterface.printGameDefeat(word.getWord());
         this.startGame();
     }
 
