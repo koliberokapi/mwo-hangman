@@ -8,7 +8,7 @@ public class UserInterface {
     private String character;
 
     public void welcomeMessage() {
-        System.out.println("!!! ------ Welcome in Hangman game ------ !!!");
+        System.out.println("\n\n!!! ------ Welcome in Hangman game ------ !!!");
         System.out.println("                ! Have fun !");
     }
     public String inputChar() {

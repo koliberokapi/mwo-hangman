@@ -3,12 +3,14 @@ package pl.edu.agh.hangman.word;
 import java.util.ArrayList;
 
 public class Word {
+    String word;
     char[] letters;
     ArrayList<Character> foundLetters;
     char hiddenSign;
 
     public Word(String word) {
-        this.letters = word.toCharArray();
+        this.word = word.trim();
+        this.letters = this.word.toLowerCase().toCharArray();
         this.foundLetters = new ArrayList<>();
         this.hiddenSign = '_';
     }
@@ -24,6 +26,10 @@ public class Word {
         return converter.getHiddenWord(this.hiddenSign);
     }
 
+    public String getWord() {
+        return this.word;
+    }
+
     public void addFoundLetter (char letter) {
         letter = Character.toLowerCase(letter);
         if(foundLetters.contains(letter)) {
@@ -33,6 +39,7 @@ public class Word {
     }
 
     public boolean isLetterInWord(char specificLetter) {
+        specificLetter = Character.toLowerCase(specificLetter);
         for(char letter : letters) {
             if(letter == specificLetter) {
                 return true;
@@ -42,6 +49,7 @@ public class Word {
     }
 
     public boolean isLetterAlreadyFound(char specificLetter) {
+        specificLetter = Character.toLowerCase(specificLetter);
         for(char letter : foundLetters) {
             if(letter == specificLetter) {
                 return true;
