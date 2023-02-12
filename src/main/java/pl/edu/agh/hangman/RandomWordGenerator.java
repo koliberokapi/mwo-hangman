@@ -28,6 +28,4 @@ public class RandomWordGenerator {
         int index = rnd.nextInt(this.availableWords.size());
         return this.availableWords.get(index);
     }
-
-
 }

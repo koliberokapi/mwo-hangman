@@ -8,28 +8,29 @@ public class UserInterface {
     private String character;
 
     public void welcomeMessage() {
-        System.out.println("!!! ------ Welcome in Hangman game ------ !!!");
+        System.out.println("\n\n!!! ------ Welcome in Hangman game ------ !!!");
         System.out.println("                ! Have fun !");
     }
     public String inputChar() {
         Scanner scan = new Scanner(System.in);
         System.out.print("guess> ");
         character = scan.nextLine();
-        while (character.length() > 1) {
-            System.out.println("Podales wiecej niz jedna litere. Sprobuj jeszcze raz :)");
+
+        while (character.length() != 1) {
+            System.out.println("Podaj jedną literę. :)");
             character = scan.nextLine();
         }
         return character;
     }
 
-    public void printGameDefeat() {
-        //System.out.println("\\( ᴼ  ᴼ )/");
+    public void printGameDefeat(String word) {
         System.out.println("Przegrales gre :(");
+        System.out.println("Poprawne haslo: " + word);
     }
 
-    public void printGameWin() {
-        //System.out.println("\\( ᴼ  ᴼ )/");
+    public void printGameWin(String word) {
         System.out.println("Wygrales gre! :)");
+        System.out.println("Poprawne haslo: " + word);
     }
 
     public void printLetterPlaces(String word) {
