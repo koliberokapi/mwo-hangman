@@ -9,8 +9,8 @@ public class Word {
     char hiddenSign;
 
     public Word(String word) {
-        this.word = word.trim();
-        this.letters = this.word.toLowerCase().toCharArray();
+        this.word = word.trim().toLowerCase();
+        this.letters = this.word.toCharArray();
         this.foundLetters = new ArrayList<>();
         this.hiddenSign = '_';
     }

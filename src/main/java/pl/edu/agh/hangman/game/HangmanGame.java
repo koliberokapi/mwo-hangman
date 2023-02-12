@@ -23,15 +23,15 @@ public class HangmanGame {
     private void startGame() {
         userInterface.welcomeMessage();
         this.points = 0;
+
         try {
             this.word = new Word(wordGenerator.randomWord());
-        } catch (FileNotFoundException e) {
+        }
+        catch (FileNotFoundException e) {
             System.out.println("Nie znaleziono pliku z hasłami. Nie możemy rozpocząć zabawy :(");
             return;
         }
         userInterface.printLetterPlaces(word.getHiddenWord());
-        //debug:
-        System.out.println(word.getWord());
 
         while(this.points < MessageDisplayer.HANGMANPICS.length - 1) {
             String givenCharacter = userInterface.inputChar();
@@ -40,7 +40,8 @@ public class HangmanGame {
             if (word.isLetterInWord(character)) {
                 word.addFoundLetter(character);
 
-            } else {
+            }
+            else {
                 this.points++;
             }
 
@@ -56,7 +57,4 @@ public class HangmanGame {
         userInterface.printGameDefeat(word.getWord());
         this.startGame();
     }
-
-
-
 }

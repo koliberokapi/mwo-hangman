@@ -16,7 +16,8 @@ public class GuessedWordConverter {
         for (char letter : letters) {
             if (foundLetters.contains(Character.toLowerCase(letter))) {
                 hiddenWord = hiddenWord.concat(Character.toString(letter));
-            } else {
+            }
+            else {
                 hiddenWord = hiddenWord.concat(Character.toString(hiddenSign));
             }
         }

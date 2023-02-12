@@ -15,21 +15,20 @@ public class UserInterface {
         Scanner scan = new Scanner(System.in);
         System.out.print("guess> ");
         character = scan.nextLine();
-        while (character.length() > 1) {
-            System.out.println("Podales wiecej niz jedna litere. Sprobuj jeszcze raz :)");
+
+        while (character.length() != 1) {
+            System.out.println("Podaj jedną literę. :)");
             character = scan.nextLine();
         }
         return character;
     }
 
     public void printGameDefeat(String word) {
-        //System.out.println("\\( ᴼ  ᴼ )/");
         System.out.println("Przegrales gre :(");
         System.out.println("Poprawne haslo: " + word);
     }
 
     public void printGameWin(String word) {
-        //System.out.println("\\( ᴼ  ᴼ )/");
         System.out.println("Wygrales gre! :)");
         System.out.println("Poprawne haslo: " + word);
     }
